@@ -20,12 +20,8 @@ Run the following commands:
 
 ```
 git clone git@github.com:harshm121/M3L.git
-
 conda create -n mmsemienv python=3.6
-
 pip install -r requirements.txt
-
-pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu113
 ```
 
 
@@ -36,8 +32,8 @@ pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --e
 #### Download
 
 - Download the Stanford Indoor dataset using the instructions [here](https://github.com/alexsax/2D-3D-Semantics)
-
 - Run  `data/stanford_indoor_dataset/gen_sid.py` to generate rgb images, depth images and segmentation labels (Sets 255 in segmentation map wherever label is missing and fills in 0 for missing depth values)
+
 
 #### Train/Val/Test split and Semi-Supervised Configs
 
@@ -53,6 +49,12 @@ pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --e
 
 - Download the SUNRGBD dataset with 37 classes using the instructions [here](https://github.com/ankurhanda/sunrgbd-meta-data#training-on-rgb-data-for-37-classes)
 
+#### Train/Val/Test split and Semi-Supervised Configs
+
+- `data/sunrgbd/config` contains train, val and test splits as well as semi-supervised configs for different labeled ratios.
+- Since SUNRGBD val images vary in size, there are different files for different image sizes.
+
+---
 
 ### Dataset Folder Structure
 
@@ -86,37 +88,87 @@ The code requires the datasets in `data` folder in the following format:
     │       ├── train_config
     │       └── val.txt
     └── sunrgbd
+    │   └── config
+    │   │   ├── train_config_rgbd
+    │   │   ├── <all_val_files>.txt
+    │   │   └── <all_test_files>.txt
+
   ```
 
+---
+
+### Hugging Face Demo
+
+-- [Demo](https://harshm121-m3l.hf.space/), [Code](https://huggingface.co/spaces/harshm121/M3L/tree/main)
+
+---
 
 ### Checkpoints
 
-| Dataset | Labels used | Modality | Framework       | Checkpoint | Test mIoU | Config file |
-|---------|-------------|----------|-----------------|------------|-----------|-------------|
-| SID     | 0.1% (49)   | RGB + D  | Supervised Only | -          | -         | -           |
-| SID     | 0.1% (49)   | RGB + D  | Mean Teacher    | -          | -         | -           |
-| SID     | 0.1% (49)   | RGB + D  | M3L             | -          | -         | -           |
-| SID     | 0.2% (98)   | RGB + D  | Supervised Only | -          | -         | -           |
-| SID     | 0.2% (98)   | RGB + D  | Mean Teacher    | -          | -         | -           |
-| SID     | 0.2% (98)   | RGB + D  | M3L             | -          | -         | -           |
-| SID     | 1% (491)    | RGB + D  | Supervised Only | -          | -         | -           |
-| SID     | 1% (491)    | RGB + D  | Mean Teacher    | -          | -         | -           |
-| SID     | 1% (491)    | RGB + D  | M3L             | -          | -         | -           |
-| SUNRGBD | 6.25% (297) | RGB + D  | Supervised Only | -          | -         | -           |
-| SUNRGBD | 6.25% (297) | RGB + D  | Mean Teacher    | -          | -         | -           |
-| SUNRGBD | 6.25% (297) | RGB + D  | M3L             | -          | -         | -           |
-| SUNRGBD | 12.5% (594) | RGB + D  | Supervised Only | -          | -         | -           |
-| SUNRGBD | 12.5% (594) | RGB + D  | Mean Teacher    | -          | -         | -           |
-| SUNRGBD | 12.5% (594) | RGB + D  | M3L             | -          | -         | -           |
-| SUNRGBD | 25% (1189)  | RGB + D  | Supervised Only | -          | -         | -           |
-| SUNRGBD | 25% (1189)  | RGB + D  | Mean Teacher    | -          | -         | -           |
-| SUNRGBD | 25% (1189)  | RGB + D  | M3L             | -          | -         | -           |
+| Dataset | Labels used | Modality | Framework       | Config file                          | Checkpoint                                             | Test mIoU |
+|---------|-------------|----------|-----------------|--------------------------------------|--------------------------------------------------------|-----------|
+| SID     | 0.1% (49)   | RGB + D  | Supervised Only | src/configs/sid_0.1_suponly.yml      | snapshots/checkpoints/SID/sid_0.1_suponly.pth          | 42.09     |
+| SID     | 0.1% (49)   | RGB + D  | Mean Teacher    | src/configs/sid_0.1_mt.yml           | snapshots/checkpoints/SID/sid_0.1_mt.pth               | 41.77     |
+| SID     | 0.1% (49)   | RGB + D  | M3L             | src/configs/sid_0.1_m3l.yml          | snapshots/checkpoints/SID/sid_0.1_m3l.pth              | 44.1      |
+| SID     | 0.2% (98)   | RGB + D  | Supervised Only | src/configs/sid_0.2_suponly.yml      | snapshots/checkpoints/SID/sid_0.2_suponly.pth          | 46.6      |
+| SID     | 0.2% (98)   | RGB + D  | Mean Teacher    | src/configs/sid_0.2_mt.yml           | snapshots/checkpoints/SID/sid_0.2_mt.pth               | 48.54     |
+| SID     | 0.2% (98)   | RGB + D  | M3L             | src/configs/sid_0.2_m3l.yml          | snapshots/checkpoints/SID/sid_0.2_m3l.pth              | 49.05     |
+| SID     | 1% (491)    | RGB + D  | Supervised Only | src/configs/sid_1.0_suponly.yml      | snapshots/checkpoints/SID/sid_0.3_suponly.pth          | 52.47     |
+| SID     | 1% (491)    | RGB + D  | Mean Teacher    | src/configs/sid_1.0_mt.yml           | snapshots/checkpoints/SID/sid_1.0_mt.pth               | 54.32     |
+| SID     | 1% (491)    | RGB + D  | M3L             | src/configs/sid_1.0_m3l.yml          | snapshots/checkpoints/SID/sid_1.0_m3l.pth              | 55.48     |
+| SUNRGBD | 6.25% (297) | RGB + D  | Supervised Only | src/configs/sunrgbd_6.25_suponly.yml | snapshots/checkpoints/SUNRGBD/sunrgbd_6.25_suponly.pth | 32        |
+| SUNRGBD | 6.25% (297) | RGB + D  | Mean Teacher    | src/configs/sunrgbd_6.25_mt.yml      | snapshots/checkpoints/SUNRGBD/sunrgbd_6.25_mt.pth      | 31.11     |
+| SUNRGBD | 6.25% (297) | RGB + D  | M3L             | src/configs/sunrgbd_6.25_m3l.yml     | snapshots/checkpoints/SUNRGBD/sunrgbd_6.25_m3l.pth     | 30.67     |
+| SUNRGBD | 12.5% (594) | RGB + D  | Supervised Only | src/configs/sunrgbd_12.5_suponly.yml | snapshots/checkpoints/SUNRGBD/sunrgbd_12.5_suponly.pth | 35.88     |
+| SUNRGBD | 12.5% (594) | RGB + D  | Mean Teacher    | src/configs/sunrgbd_12.5_mt.yml      | snapshots/checkpoints/SUNRGBD/sunrgbd_12.5_mt.pth      | 39.17     |
+| SUNRGBD | 12.5% (594) | RGB + D  | M3L             | src/configs/sunrgbd_12.5_m3l.yml     | snapshots/checkpoints/SUNRGBD/sunrgbd_12.5_m3l.pth     | 39.7      |
+| SUNRGBD | 25% (1189)  | RGB + D  | Supervised Only | src/configs/sunrgbd_25_suponly.yml   | snapshots/checkpoints/SUNRGBD/sunrgbd_25_suponly.pth   | 42.09     |
+| SUNRGBD | 25% (1189)  | RGB + D  | Mean Teacher    | src/configs/sunrgbd_25_mt.yml        | snapshots/checkpoints/SUNRGBD/sunrgbd_25_mt.pth        | 41.95     |
+| SUNRGBD | 25% (1189)  | RGB + D  | M3L             | src/configs/sunrgbd_25_suponly.yml   | snapshots/checkpoints/SUNRGBD/sunrgbd_25_m3l.pth       | 42.69     |
+
+### Reproducing results
+
+ - Reproducing results from the paper is easy. Just download the config file and the checkpoint from the table above and run the following command:
+
+ ```python main_ddp_reproduce.py --cfg_file </path/to/config_file.yml> --verbose iter --checkpoint <path/to/checkpoint.pth>```
+
+---
+
 
 ## Usage
 
+### Config file
+ - Enter the correct root_dir which is the `/path/to/M3L` in the config file. 
+
+ - Available segmentation models: 
+        -- [Uni-modal CNN based] `dlv3p`,  `refinenet` (with possible base models: `r18`, `r50`, `r101`)
+        -- [Uni-modal Segformer based] `segformer` (with possible base models: `mit_b0`, `mit_b1`, `mit_b2`, `mit_b3`, `mit_b4`, `mit_b5`)
+        -- [Multi-modal CNN based] `cen` - extending `refinenet` to multi-modal
+        -- [Multi-modal Segformer based] `linearfusion` (proposed Linear Fusion), `tokenfusion` ([Token Fusion](https://arxiv.org/pdf/2204.08721.pdf)), `unifiedrepresentationnetwork` - extending `segformer` to multi-modal
+
+ - Available Training frameworks: 
+     -- Without modality dropout:
+        -- `nossl`: supervised training
+        -- `mean_teacher`: mean teacher training
+        -- `cps`: [Cross Pseudo Supervision](https://arxiv.org/abs/2106.01226)
+     -- With modality dropout:
+        -- `nosslmoddrop`: supervised training with modality dropout
+        -- `meanteachermoddrop`: mean teacher training with modality dropout
+        -- `meanteachermaskedstudent`: Proposed M3L training
+        (Note: for these frameworks, use `linearfusionmaskedconsmixbatch` instead of `linearfusion`, `tokenfusionmaskedconsmixbatch` instead of `tokenfusion`, `unifiedrepresentationnetworkmoddrop` instead of `unifiedrepresentationnetwork` for enabling modality dropout)
+
+
 ### Training
-``` python main_ddp.py --cfg_file </path/to/config_file> --verbose iter```
+``` python main_ddp.py --cfg_file </path/to/config_file.yml> --verbose iter```
 
 ### Evaluation
-``` python main_ddp_eval.py --cfg_file </path/to/config_file> --verbose iter```
+``` python main_ddp_eval.py --cfg_file </path/to/config_file.yml> --verbose iter```
 
+### Test
+``` python main_ddp_test.py --cfg_file </path/to/config_file.yml> --verbose iter --checkpoint <iter_number>```
+
+
+
+---
+
+This code is inspired from [pytorch-semseg](https://github.com/meetps/pytorch-semseg), [TorchSemiSeg](https://github.com/charlesCXK/TorchSemiSeg) and [Token Fusion](https://github.com/yikaiw/TokenFusion), thanks to their open-source code.
