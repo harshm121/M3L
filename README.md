@@ -18,7 +18,7 @@ Harsh Maheshwari, Yen-Cheng Liu, Zsolt Kira
 
 Run the following commands:
 
-```
+```bash
 git clone git@github.com:harshm121/M3L.git
 conda create -n mmsemienv python=3.6
 pip install -r requirements.txt
@@ -130,7 +130,9 @@ The code requires the datasets in `data` folder in the following format:
 
  - Reproducing results from the paper is easy. Just download the config file and the checkpoint from the table above and run the following command:
 
- ```python main_ddp_reproduce.py --cfg_file </path/to/config_file.yml> --verbose iter --checkpoint <path/to/checkpoint.pth>```
+ ```python
+ python main_ddp_reproduce.py --cfg_file </path/to/config_file.yml> --verbose iter --checkpoint <path/to/checkpoint.pth>
+ ```
 
 ---
 
@@ -159,13 +161,19 @@ The code requires the datasets in `data` folder in the following format:
 
 
 ### Training
-``` python main_ddp.py --cfg_file </path/to/config_file.yml> --verbose iter```
+```python
+ python main_ddp.py --cfg_file </path/to/config_file.yml> --verbose iter
+ ```
 
 ### Evaluation
-``` python main_ddp_eval.py --cfg_file </path/to/config_file.yml> --verbose iter```
+```python
+ python main_ddp_eval.py --cfg_file </path/to/config_file.yml> --verbose iter
+ ```
 
 ### Test
-``` python main_ddp_test.py --cfg_file </path/to/config_file.yml> --verbose iter --checkpoint <iter_number>```
+```python
+ python main_ddp_test.py --cfg_file </path/to/config_file.yml> --verbose iter --checkpoint <iter_number>
+ ```
 
 
 
