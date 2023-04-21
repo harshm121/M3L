@@ -140,21 +140,21 @@ The code requires the datasets in `data` folder in the following format:
 ### Config file
  - Enter the correct root_dir which is the `/path/to/M3L` in the config file. 
 
- - Available segmentation models: 
-        -- [Uni-modal CNN based] `dlv3p`,  `refinenet` (with possible base models: `r18`, `r50`, `r101`)
-        -- [Uni-modal Segformer based] `segformer` (with possible base models: `mit_b0`, `mit_b1`, `mit_b2`, `mit_b3`, `mit_b4`, `mit_b5`)
-        -- [Multi-modal CNN based] `cen` - extending `refinenet` to multi-modal
-        -- [Multi-modal Segformer based] `linearfusion` (proposed Linear Fusion), `tokenfusion` ([Token Fusion](https://arxiv.org/pdf/2204.08721.pdf)), `unifiedrepresentationnetwork` - extending `segformer` to multi-modal
+ - Available segmentation models: <br>
+        -- [Uni-modal CNN based] `dlv3p`,  `refinenet` (with possible base models: `r18`, `r50`, `r101`)<br>
+        -- [Uni-modal Segformer based] `segformer` (with possible base models: `mit_b0`, `mit_b1`, `mit_b2`, `mit_b3`, `mit_b4`, `mit_b5`)<br>
+        -- [Multi-modal CNN based] `cen` - extending `refinenet` to multi-modal<br>
+        -- [Multi-modal Segformer based] `linearfusion` (proposed Linear Fusion), `tokenfusion` ([Token Fusion](https://arxiv.org/pdf/2204.08721.pdf)), `unifiedrepresentationnetwork` - extending `segformer` to multi-modal<br>
 
- - Available Training frameworks: 
-     -- Without modality dropout:
-        -- `nossl`: supervised training
-        -- `mean_teacher`: mean teacher training
-        -- `cps`: [Cross Pseudo Supervision](https://arxiv.org/abs/2106.01226)
-     -- With modality dropout:
-        -- `nosslmoddrop`: supervised training with modality dropout
-        -- `meanteachermoddrop`: mean teacher training with modality dropout
-        -- `meanteachermaskedstudent`: Proposed M3L training
+ - Available Training frameworks: <br>
+     -- Without modality dropout:<br>
+        -- `nossl`: supervised training<br>
+        -- `mean_teacher`: mean teacher training<br>
+        -- `cps`: [Cross Pseudo Supervision](https://arxiv.org/abs/2106.01226)<br>
+     -- With modality dropout:<br>
+        -- `nosslmoddrop`: supervised training with modality dropout<br>
+        -- `meanteachermoddrop`: mean teacher training with modality dropout<br>
+        -- `meanteachermaskedstudent`: Proposed M3L training<br>
         (Note: for these frameworks, use `linearfusionmaskedconsmixbatch` instead of `linearfusion`, `tokenfusionmaskedconsmixbatch` instead of `tokenfusion`, `unifiedrepresentationnetworkmoddrop` instead of `unifiedrepresentationnetwork` for enabling modality dropout)
 
 
