@@ -6,6 +6,9 @@ Harsh Maheshwari, Yen-Cheng Liu, Zsolt Kira
 
 [Project Page](https://harshm121.github.io/projects/m3l.html), [Demo](https://harshm121-m3l.hf.space/)
 
+![Missing modality](teaser.png)
+
+---
 
 ## What do you get from the repository?
 1. Multi-modal Segformer based segmentation model: Linear Fusion - outperforms other baselines on RGBD segmentation
