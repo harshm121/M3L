@@ -1,0 +1,53 @@
+root_dir: '/path/to/M3L/'
+bn_eps: 1e-5
+bn_momentum: 0.1
+n_sup_epochs: 0
+n_unsup_epochs: 50
+
+#optimizer
+optim: "adamw"
+lr_warm_up_epoch: 0
+base_lr: [0.0001, 0.0001, 0.0003]
+lr_power: 0.9
+momentum: 0.9
+weight_decay: [0.0001, 0, 0.0001]
+
+#dataset
+data: "sunrgbd"
+modalities: ['rgb', 'depth']
+data_image_height: 530
+data_image_width: 730
+data_root: 'data/sunrgbd'
+train_source: 'data/sunrgbd/config/train_config_rgbd/' 
+labeled_ratio: 8
+eval_source: 'data/sunrgbd/config/val_rgbd.txt'
+test_source: 'data/sunrgbd/config/test_rgbd.txt'
+image_height: 500
+image_width: 500
+train_scale_array: [0.5, 0.75, 1, 1.5, 1.75, 2.0]
+batch_size: 16
+val_batch_size: 64
+num_workers: 4
+num_classes: 37
+num_eval_imgs: 528
+total_train_imgs: 4757
+eval_flip: False
+sliding_eval: False
+stride_rate: 0.33
+
+#Segmentation Model
+seg_model: "linearfusion"
+base_model: "mit_b2"
+ratio: 0.8
+freeze_bn: True
+
+#SSL Hyperparams
+ssl_framework: "meanteacher"
+pseudo_loss_coeff: 1
+ema_alpha: 0.99
+
+#Run Params
+world_size: 4
+snapshot_epoch: 3
+snapshot_iter: 300
+run_suffix: ""

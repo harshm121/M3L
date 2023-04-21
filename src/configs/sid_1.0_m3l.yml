@@ -1,0 +1,56 @@
+root_dir: '/path/to/M3L/'
+bn_eps: 1e-5
+bn_momentum: 0.1
+n_sup_epochs: 0
+n_unsup_epochs: 5
+
+#optimizer
+optim: "adamw"
+lr_warm_up_epoch: 0
+base_lr: [0.0001, 0.0001, 0.0003]
+lr_power: 0.9
+momentum: 0.9
+weight_decay: [0.0001, 0, 0.0001]
+
+#dataset
+data: "stanford_indoor"
+modalities: ['rgb', 'depth']
+data_image_height: 1080
+data_image_width: 1080
+data_root: 'data/stanford_indoor_dataset/'
+train_source: 'data/stanford_indoor_dataset/configs/config_rgbd/train_config/' 
+labeled_ratio: 100
+eval_source: 'data/stanford_indoor_dataset/configs/config_rgbd/val.txt' 
+test_source: 'data/stanford_indoor_dataset/configs/config_rgbd/test.txt'
+image_height: 540
+image_width: 540
+train_scale_array: [0.5, 0.75, 1, 1.5, 1.75, 2.0]
+batch_size: 16
+val_batch_size: 64
+num_workers: 3
+num_classes: 13
+num_eval_imgs: 3704
+total_train_imgs: 49199
+eval_flip: False
+sliding_eval: False
+stride_rate: 0.33
+
+#Segmentation Model
+seg_model: "linearfusionmaskedconsmixbatch"
+ratio: 0.8
+masking_ratio: 1.0
+l1_lambda: 1e-5
+base_model: "mit_b2"
+freeze_bn: True
+restart: False
+
+#SSL Hyperparams
+ssl_framework: "meanteachermaskedstudent"
+pseudo_loss_coeff: 1
+ema_alpha: 0.99
+
+#Run Params
+world_size: 4
+snapshot_epoch: 3
+snapshot_iter: 300
+run_suffix: ""

@@ -107,24 +107,24 @@ The code requires the datasets in `data` folder in the following format:
 
 | Dataset | Labels used | Modality | Framework       | Config file                          | Checkpoint                                             | Test mIoU |
 |---------|-------------|----------|-----------------|--------------------------------------|--------------------------------------------------------|-----------|
-| SID     | 0.1% (49)   | RGB + D  | Supervised Only | src/configs/sid_0.1_suponly.yml      | snapshots/checkpoints/SID/sid_0.1_suponly.pth          | 42.09     |
-| SID     | 0.1% (49)   | RGB + D  | Mean Teacher    | src/configs/sid_0.1_mt.yml           | snapshots/checkpoints/SID/sid_0.1_mt.pth               | 41.77     |
-| SID     | 0.1% (49)   | RGB + D  | M3L             | src/configs/sid_0.1_m3l.yml          | snapshots/checkpoints/SID/sid_0.1_m3l.pth              | 44.1      |
-| SID     | 0.2% (98)   | RGB + D  | Supervised Only | src/configs/sid_0.2_suponly.yml      | snapshots/checkpoints/SID/sid_0.2_suponly.pth          | 46.6      |
-| SID     | 0.2% (98)   | RGB + D  | Mean Teacher    | src/configs/sid_0.2_mt.yml           | snapshots/checkpoints/SID/sid_0.2_mt.pth               | 48.54     |
-| SID     | 0.2% (98)   | RGB + D  | M3L             | src/configs/sid_0.2_m3l.yml          | snapshots/checkpoints/SID/sid_0.2_m3l.pth              | 49.05     |
-| SID     | 1% (491)    | RGB + D  | Supervised Only | src/configs/sid_1.0_suponly.yml      | snapshots/checkpoints/SID/sid_0.3_suponly.pth          | 52.47     |
-| SID     | 1% (491)    | RGB + D  | Mean Teacher    | src/configs/sid_1.0_mt.yml           | snapshots/checkpoints/SID/sid_1.0_mt.pth               | 54.32     |
-| SID     | 1% (491)    | RGB + D  | M3L             | src/configs/sid_1.0_m3l.yml          | snapshots/checkpoints/SID/sid_1.0_m3l.pth              | 55.48     |
-| SUNRGBD | 6.25% (297) | RGB + D  | Supervised Only | src/configs/sunrgbd_6.25_suponly.yml | snapshots/checkpoints/SUNRGBD/sunrgbd_6.25_suponly.pth | 32        |
-| SUNRGBD | 6.25% (297) | RGB + D  | Mean Teacher    | src/configs/sunrgbd_6.25_mt.yml      | snapshots/checkpoints/SUNRGBD/sunrgbd_6.25_mt.pth      | 31.11     |
-| SUNRGBD | 6.25% (297) | RGB + D  | M3L             | src/configs/sunrgbd_6.25_m3l.yml     | snapshots/checkpoints/SUNRGBD/sunrgbd_6.25_m3l.pth     | 30.67     |
-| SUNRGBD | 12.5% (594) | RGB + D  | Supervised Only | src/configs/sunrgbd_12.5_suponly.yml | snapshots/checkpoints/SUNRGBD/sunrgbd_12.5_suponly.pth | 35.88     |
-| SUNRGBD | 12.5% (594) | RGB + D  | Mean Teacher    | src/configs/sunrgbd_12.5_mt.yml      | snapshots/checkpoints/SUNRGBD/sunrgbd_12.5_mt.pth      | 39.17     |
-| SUNRGBD | 12.5% (594) | RGB + D  | M3L             | src/configs/sunrgbd_12.5_m3l.yml     | snapshots/checkpoints/SUNRGBD/sunrgbd_12.5_m3l.pth     | 39.7      |
-| SUNRGBD | 25% (1189)  | RGB + D  | Supervised Only | src/configs/sunrgbd_25_suponly.yml   | snapshots/checkpoints/SUNRGBD/sunrgbd_25_suponly.pth   | 42.09     |
-| SUNRGBD | 25% (1189)  | RGB + D  | Mean Teacher    | src/configs/sunrgbd_25_mt.yml        | snapshots/checkpoints/SUNRGBD/sunrgbd_25_mt.pth        | 41.95     |
-| SUNRGBD | 25% (1189)  | RGB + D  | M3L             | src/configs/sunrgbd_25_suponly.yml   | snapshots/checkpoints/SUNRGBD/sunrgbd_25_m3l.pth       | 42.69     |
+| SID     | 0.1% (49)   | RGB + D  | Supervised Only | src/configs/sid_0.1_suponly.yml      | [sid_0.1_suponly.pth](https://huggingface.co/harshm121/M3L/blob/main/SID/sid_0.1_suponly.pth)          | 42.09     |
+| SID     | 0.1% (49)   | RGB + D  | Mean Teacher    | src/configs/sid_0.1_mt.yml           | [sid_0.1_mt.pth](https://huggingface.co/harshm121/M3L/blob/main/SID/sid_0.1_mt.pth)               | 41.77     |
+| SID     | 0.1% (49)   | RGB + D  | M3L             | src/configs/sid_0.1_m3l.yml          | [sid_0.1_m3l.pth](https://huggingface.co/harshm121/M3L/blob/main/SID/sid_0.1_m3l.pth)              | 44.1      |
+| SID     | 0.2% (98)   | RGB + D  | Supervised Only | src/configs/sid_0.2_suponly.yml      | [sid_0.2_suponly.pth](https://huggingface.co/harshm121/M3L/blob/main/SID/sid_0.2_suponly.pth)          | 46.6      |
+| SID     | 0.2% (98)   | RGB + D  | Mean Teacher    | src/configs/sid_0.2_mt.yml           | [sid_0.2_mt.pth](https://huggingface.co/harshm121/M3L/blob/main/SID/sid_0.2_mt.pth)               | 48.54     |
+| SID     | 0.2% (98)   | RGB + D  | M3L             | src/configs/sid_0.2_m3l.yml          | [sid_0.2_m3l.pth](https://huggingface.co/harshm121/M3L/blob/main/SID/sid_0.2_m3l.pth)              | 49.05     |
+| SID     | 1% (491)    | RGB + D  | Supervised Only | src/configs/sid_1.0_suponly.yml      | [sid_1.0_suponly.pth](https://huggingface.co/harshm121/M3L/blob/main/SID/sid_1.0_suponly.pth)          | 52.47     |
+| SID     | 1% (491)    | RGB + D  | Mean Teacher    | src/configs/sid_1.0_mt.yml           | [sid_1.0_mt.pth](https://huggingface.co/harshm121/M3L/blob/main/SID/sid_1.0_mt.pth)               | 54.32     |
+| SID     | 1% (491)    | RGB + D  | M3L             | src/configs/sid_1.0_m3l.yml          | [sid_1.0_m3l.pth](https://huggingface.co/harshm121/M3L/blob/main/SID/sid_1.0_m3l.pth)              | 55.48     |
+| SUNRGBD | 6.25% (297) | RGB + D  | Supervised Only | src/configs/sunrgbd_6.25_suponly.yml | [sunrgbd_6.25_suponly.pth](https://huggingface.co/harshm121/M3L/blob/main/SUNRGBD/sunrgbd_6.25_suponly.pth) | 32        |
+| SUNRGBD | 6.25% (297) | RGB + D  | Mean Teacher    | src/configs/sunrgbd_6.25_mt.yml      | [sunrgbd_6.25_mt.pth](https://huggingface.co/harshm121/M3L/blob/main/SUNRGBD/sunrgbd_6.25_mt.pth)      | 31.11     |
+| SUNRGBD | 6.25% (297) | RGB + D  | M3L             | src/configs/sunrgbd_6.25_m3l.yml     | [sunrgbd_6.25_m3l.pth](https://huggingface.co/harshm121/M3L/blob/main/SUNRGBD/sunrgbd_6.25_m3l.pth)     | 30.67     |
+| SUNRGBD | 12.5% (594) | RGB + D  | Supervised Only | src/configs/sunrgbd_12.5_suponly.yml | [sunrgbd_12.5_suponly.pth](https://huggingface.co/harshm121/M3L/blob/main/SUNRGBD/sunrgbd_12.5_suponly.pth) | 35.88     |
+| SUNRGBD | 12.5% (594) | RGB + D  | Mean Teacher    | src/configs/sunrgbd_12.5_mt.yml      | [sunrgbd_12.5_mt.pth](https://huggingface.co/harshm121/M3L/blob/main/SUNRGBD/sunrgbd_12.5_mt.pth)      | 39.17     |
+| SUNRGBD | 12.5% (594) | RGB + D  | M3L             | src/configs/sunrgbd_12.5_m3l.yml     | [sunrgbd_12.5_m3l.pth](https://huggingface.co/harshm121/M3L/blob/main/SUNRGBD/sunrgbd_12.5_m3l.pth)     | 39.7      |
+| SUNRGBD | 25% (1189)  | RGB + D  | Supervised Only | src/configs/sunrgbd_25_suponly.yml   | [sunrgbd_25_suponly.pth](https://huggingface.co/harshm121/M3L/blob/main/SUNRGBD/sunrgbd_25_suponly.pth)   | 42.09     |
+| SUNRGBD | 25% (1189)  | RGB + D  | Mean Teacher    | src/configs/sunrgbd_25_mt.yml        | [sunrgbd_25_mt.pth](https://huggingface.co/harshm121/M3L/blob/main/SUNRGBD/sunrgbd_25_mt.pth)        | 41.95     |
+| SUNRGBD | 25% (1189)  | RGB + D  | M3L             | src/configs/sunrgbd_25_suponly.yml   | [sunrgbd_25_m3l.pth](https://huggingface.co/harshm121/M3L/blob/main/SUNRGBD/sunrgbd_25_m3l.pth)       | 42.69     |
 
 ### Reproducing results
 
@@ -154,7 +154,7 @@ The code requires the datasets in `data` folder in the following format:
      * With modality dropout:<br>
         * `nosslmoddrop`: supervised training with modality dropout<br>
         * `meanteachermoddrop`: mean teacher training with modality dropout<br>
-        * `meanteachermaskedstudent`: Proposed M3L training<br>
+        * `meanteachermaskedstudent`: Proposed M3L training<br><br>
         (Note: for these frameworks, use `linearfusionmaskedconsmixbatch` instead of `linearfusion`, `tokenfusionmaskedconsmixbatch` instead of `tokenfusion`, `unifiedrepresentationnetworkmoddrop` instead of `unifiedrepresentationnetwork` for enabling modality dropout)
 
 
