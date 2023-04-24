@@ -1,5 +1,5 @@
 # M3L: Multi-modal Teacher for Masked Modality Learning
-Official repository for [Missing Modality Robustness in Semi-Supervised Multi-Modal Semantic Segmentation](https://harshm121.github.io/projects/m3l.html). 
+Official repository for [Missing Modality Robustness in Semi-Supervised Multi-Modal Semantic Segmentation](https://arxiv.org/pdf/2304.10756.pdf). 
 
 
 Harsh Maheshwari, Yen-Cheng Liu, Zsolt Kira
