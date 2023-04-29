@@ -1,5 +1,5 @@
 # M3L: Multi-modal Teacher for Masked Modality Learning
-Official repository for [Missing Modality Robustness in Semi-Supervised Multi-Modal Semantic Segmentation](). 
+Official repository for [Missing Modality Robustness in Semi-Supervised Multi-Modal Semantic Segmentation](https://arxiv.org/pdf/2304.10756.pdf). 
 
 
 Harsh Maheshwari, Yen-Cheng Liu, Zsolt Kira
@@ -180,7 +180,20 @@ The code requires the datasets in `data` folder in the following format:
  python main_ddp_test.py --cfg_file </path/to/config_file.yml> --verbose iter --checkpoint <iter_number>
  ```
 
+## Citation
 
+If you use this in your research, please consider citing:
+
+```
+@misc{maheshwari2023m3l,
+      title={Missing Modality Robustness in Semi-Supervised Multi-Modal Semantic Segmentation}, 
+      author={Harsh Maheshwari and Yen-Cheng Liu and Zsolt Kira},
+      year={2023},
+      eprint={2304.10756},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
 
 ---
 
