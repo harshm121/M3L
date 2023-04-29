@@ -9,6 +9,8 @@ Harsh Maheshwari, Yen-Cheng Liu, Zsolt Kira
 ![Missing modality](teaser.png)
 
 ---
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/missing-modality-robustness-in-semi/semi-supervised-rgbd-semantic-segmentation-on)](https://paperswithcode.com/sota/semi-supervised-rgbd-semantic-segmentation-on?p=missing-modality-robustness-in-semi) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/missing-modality-robustness-in-semi/robust-semi-supervised-rgbd-semantic)](https://paperswithcode.com/sota/robust-semi-supervised-rgbd-semantic?p=missing-modality-robustness-in-semi)  [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/missing-modality-robustness-in-semi/semi-supervised-semantic-segmentation-on-2d)](https://paperswithcode.com/sota/semi-supervised-semantic-segmentation-on-2d?p=missing-modality-robustness-in-semi) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/missing-modality-robustness-in-semi/robust-semi-supervised-rgbd-semantic-1)](https://paperswithcode.com/sota/robust-semi-supervised-rgbd-semantic-1?p=missing-modality-robustness-in-semi)
+	
 
 ## What do you get from the repository?
 1. Multi-modal Segformer based segmentation model: Linear Fusion - outperforms other baselines on RGBD segmentation
