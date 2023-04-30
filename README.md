@@ -10,7 +10,7 @@ Harsh Maheshwari, Yen-Cheng Liu, Zsolt Kira
 
 ---
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/missing-modality-robustness-in-semi/semi-supervised-rgbd-semantic-segmentation-on)](https://paperswithcode.com/sota/semi-supervised-rgbd-semantic-segmentation-on?p=missing-modality-robustness-in-semi) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/missing-modality-robustness-in-semi/robust-semi-supervised-rgbd-semantic)](https://paperswithcode.com/sota/robust-semi-supervised-rgbd-semantic?p=missing-modality-robustness-in-semi)  [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/missing-modality-robustness-in-semi/semi-supervised-semantic-segmentation-on-2d)](https://paperswithcode.com/sota/semi-supervised-semantic-segmentation-on-2d?p=missing-modality-robustness-in-semi) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/missing-modality-robustness-in-semi/robust-semi-supervised-rgbd-semantic-1)](https://paperswithcode.com/sota/robust-semi-supervised-rgbd-semantic-1?p=missing-modality-robustness-in-semi)
-	
+[![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://harshm121-m3l.hf.space/)	
 
 ## What do you get from the repository?
 1. Multi-modal Segformer based segmentation model: Linear Fusion - outperforms other baselines on RGBD segmentation
@@ -104,7 +104,7 @@ The code requires the datasets in `data` folder in the following format:
 
 ### Hugging Face Demo
 
--- [Demo](https://harshm121-m3l.hf.space/), [Code](https://huggingface.co/spaces/harshm121/M3L/tree/main)
+-- [![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://harshm121-m3l.hf.space/), [Code](https://huggingface.co/spaces/harshm121/M3L/tree/main)
 
 ---
 
