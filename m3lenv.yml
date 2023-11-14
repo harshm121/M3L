@@ -1,4 +1,4 @@
-name: mmsemienv
+name: m3lenv
 channels:
   - pytorch
   - conda-forge
@@ -150,4 +150,3 @@ dependencies:
     - widgetsnbextension==3.6.1
     - yapf==0.32.0
     - zipp==3.6.0
-prefix: /srv/share3/hmaheshwari7/miniconda/envs/mmsemienv
