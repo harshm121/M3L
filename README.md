@@ -30,7 +30,7 @@ conda env create -f m3lenv.yml
 ```
 OR
 ```
-conda create -n mmsemienv python=3.6
+conda create -n m3lenv python=3.6
 pip install -r requirements.txt
 ```
 
