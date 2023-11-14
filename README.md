@@ -26,6 +26,10 @@ Run the following commands:
 
 ```bash
 git clone git@github.com:harshm121/M3L.git
+conda env create -f m3lenv.yml
+```
+OR
+```
 conda create -n mmsemienv python=3.6
 pip install -r requirements.txt
 ```
